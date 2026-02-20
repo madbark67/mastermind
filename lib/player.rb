@@ -6,10 +6,10 @@ class Player
     @code = ""
   end
 
-  def take_guess
+  def take_code
     @code = ""
     while @code.length != 4 || !@code.match?(/^[a-z]+$/)
-      puts "#{@name}: please enter a 4 letter guess (a-z)"
+      puts "#{@name}: please enter a 4 letter code (a-z)"
       @code = gets.chomp
     end
   end
@@ -26,4 +26,15 @@ class Computer < Player
     @code = Array.new(4) {@letters.sample}.join
   end
 
+  def remove_wrongs(feedback)
+    if (feedback[:black] == 0 && feedback[:white] == 0)
+      @letters = @letters - @code.split("").uniq
+    end
+  end
+
+  def check_history(history)
+    while history.include?(@code)
+      generate_random
+    end
+  end
 end

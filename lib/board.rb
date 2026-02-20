@@ -1,12 +1,12 @@
 class Board 
 
-  attr_reader :turn_count
+  attr_reader :turn_count, :feedback, :history
 
   def initialize
     @secret_code = Array.new(4)
     @code_guess = Array.new(4)
     @turn_count = 0
-    @feedback = {black: 0, white: 0}
+    @feedback = {black: nil, white: nil}
     @history = Array.new()
   end
 

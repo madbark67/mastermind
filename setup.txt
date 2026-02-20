@@ -1,9 +1,0 @@
-Player => makes guesses & has name
-Computer => special player that has name & makes secret code + (in the future makes guesses)
-board => stores the true code generated, stores the guesses, stores and displays correct/exact match/wrong
-game => handles looping, handles presentation, creates the instances of the board, player & computer
-
-
-main => Game ===> board
-                  player
-                  computer (special player)
